@@ -54,6 +54,9 @@
   改一句文案、换一个数字就能重新出片。
 - 各平台配套文案（含发布节奏与「求 Star」话术）在 [`promo/推广文案.md`](promo/推广文案.md)，
   技术长文在 [`promo/掘金长文.md`](promo/掘金长文.md)。
+- **想拍一条实拍质感的版本？** [`promo/剪映实操脚本.md`](promo/剪映实操脚本.md) 里有完整的
+  12 镜拍摄清单、精确到秒的分镜表、逐句字幕文案、音效清单，配 [`promo/overlay/`](promo/overlay)
+  的 4 张透明底产品截图，照着铺就能出片。
 
 ---
 
@@ -386,11 +389,14 @@ mcd-buddy/
 │       └── fortune.py       # 🔮 每日运势签
 ├── tests/                   # 🧪 187 个单元 / 集成测试
 ├── promo/                   # 🎬 宣传物料
-│   ├── make_promo.py        # 逐帧渲染 16:9 / 9:16 两条宣传片
+│   ├── make_promo.py        # 逐帧渲染 16:9 / 9:16 两条设计稿宣传片
 │   ├── make_readme_gif.py   # 渲染 README 首屏演示 GIF
+│   ├── make_overlays.py     # 生成剪映用的产品截图叠加层
 │   ├── demo.gif             # README 首屏动图（352 KB）
+│   ├── overlay/             # 4 张透明底产品截图（剪映画中画直接用）
 │   ├── mcquartet-16x9.mp4   # 横屏版（B 站 / YouTube）
 │   ├── mcquartet-9x16.mp4   # 竖屏版（抖音 / 视频号 / 小红书）
+│   ├── 剪映实操脚本.md       # ⭐ 拍实拍版视频的分镜表 + 字幕 + 音效清单
 │   ├── 掘金长文.md           # 技术长文：7 个接口坑 + 可复制代码
 │   └── 推广文案.md           # 各平台文案与发布节奏
 ├── .github/workflows/ci.yml # ⚙️ GitHub Actions（多版本 pytest + ruff）

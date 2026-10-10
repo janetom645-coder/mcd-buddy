@@ -589,7 +589,7 @@ def scene_tech(img, t):
     draw_mixed_center(img, cx, int(h * (0.18 if not tall else 0.14)),
                       "不是壳子，是真的接进去了", int(w * 0.038), RED, head=True)
 
-    stats = [("35", "个真实 MCP 工具"), ("187", "个测试全绿"), ("0", "处假数据")]
+    stats = [("35", "个真实 MCP 工具"), ("192", "个测试全绿"), ("0", "处假数据")]
     if tall:
         top = int(h * 0.28)
         row_h = int(h * 0.15)

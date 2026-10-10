@@ -17,6 +17,7 @@
 
 from __future__ import annotations
 
+import zlib
 from collections.abc import Callable
 from typing import Any
 
@@ -37,6 +38,19 @@ from ..mcd_api import (
 )
 from ..mcp_client import MCDClientProtocol
 from ..utils import md_table, money
+
+
+def recipe_code(name: str) -> str:
+    """配方编号 ``HM-xxxx``。
+
+    必须用 :func:`zlib.crc32`，**不能**用内置 ``hash()``：
+    内置 ``hash()`` 对字符串是按进程随机加盐的（``PYTHONHASHSEED``），
+    同一份配方每次运行都会得到不同的编号 ——
+    这会直接破坏「离线演示与线上同构、一条命令即可复现」这条承诺，
+    也会让 README / 示例输出里的编号每次都对不上。
+    """
+    return f"HM-{zlib.crc32(name.encode('utf-8')) % 10000:04d}"
+
 
 # 咖啡因关键词（用于「清醒」配方）
 # 用单字「咖」而不是「咖啡」，因为菜单里叫「鲜萃冰咖」——不含「咖啡」二字。
@@ -401,7 +415,7 @@ def _render(
     head = "\n".join(
         [
             f"🍔 配方名称：{theme.bold(recipe_name)}",
-            f"🔖 配方编号：HM-{abs(hash(recipe_name)) % 10000:04d}",
+            f"🔖 配方编号：{recipe_code(recipe_name)}",
             f"🧾 基础套餐：{base_name}（{target.code}）",
         ]
     )

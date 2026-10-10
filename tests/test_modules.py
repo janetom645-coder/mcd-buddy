@@ -4,9 +4,14 @@
 """
 
 import asyncio
+import os
+import pathlib
+import subprocess
+import sys
 
 import pytest
 
+import mcd_buddy
 from mcd_buddy.demo import DemoMCDClient
 from mcd_buddy.mcd_api import BE_DINE_IN, ORDER_PICKUP, MenuItem, Store, fetch_menu
 from mcd_buddy.modules import (
@@ -16,6 +21,7 @@ from mcd_buddy.modules import (
     PracticeModule,
 )
 from mcd_buddy.modules.group_meal import Person, _hit, _is_meal, _match, _meal_tier
+from mcd_buddy.modules.hidden_menu import recipe_code
 from mcd_buddy.utils import display_width
 
 DEMO_STORE = Store(
@@ -282,6 +288,57 @@ class TestHiddenMenuModule:
 
     def test_cards_aligned(self, hidden_menu_output):
         assert_cards_aligned(hidden_menu_output)
+
+
+class TestRecipeCode:
+    """配方编号必须**跨进程稳定**（回归测试）。
+
+    编号原先由内置 ``hash()`` 生成，而 ``hash()`` 对字符串是按进程随机加盐的
+    （``PYTHONHASHSEED``），于是同一份配方每次运行都得到不同编号 ——
+    README / `examples/sample-outputs.md` 里的编号永远对不上，
+    「一条命令即可复现」这条承诺也就直接失效了。改用 CRC32 后在这里锁死。
+    """
+
+    RECIPE = "全明星双人分享餐八件套·减脂版"
+    EXPECTED = "HM-8655"
+
+    def test_matches_expected_value(self):
+        assert recipe_code(self.RECIPE) == self.EXPECTED
+
+    def test_is_pure(self):
+        # 同进程内多次调用必须一致
+        assert recipe_code(self.RECIPE) == recipe_code(self.RECIPE)
+
+    def test_differs_between_recipes(self):
+        assert recipe_code(self.RECIPE) != recipe_code("全明星双人分享餐八件套·增肌版")
+
+    def test_rendered_output_uses_the_stable_code(self, hidden_menu_output):
+        assert f"配方编号：{self.EXPECTED}" in hidden_menu_output
+
+    def test_stable_across_hash_seeds(self):
+        """换 ``PYTHONHASHSEED`` 重开进程，编号必须不变。"""
+        src_dir = pathlib.Path(mcd_buddy.__file__).resolve().parents[1]
+        script = (
+            "from mcd_buddy.modules.hidden_menu import recipe_code;"
+            f"print(recipe_code({self.RECIPE!r}))"
+        )
+        codes = set()
+        for seed in ("0", "1", "12345"):
+            env = {
+                **os.environ,
+                "PYTHONHASHSEED": seed,
+                "PYTHONIOENCODING": "utf-8",
+                "PYTHONPATH": str(src_dir),
+            }
+            proc = subprocess.run(
+                [sys.executable, "-c", script],
+                capture_output=True,
+                text=True,
+                env=env,
+                check=True,
+            )
+            codes.add(proc.stdout.strip())
+        assert codes == {self.EXPECTED}, f"配方编号跨进程不稳定：{codes}"
 
 
 class TestPresetSemantics:

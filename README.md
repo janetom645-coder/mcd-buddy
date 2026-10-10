@@ -165,7 +165,7 @@
 ```text
 ╭─ 🧪 我的隐藏配方 ──────────────────────────────────────╮
 │ 🍔 配方名称：全明星双人分享餐八件套·减脂版             │
-│ 🔖 配方编号：HM-3186                                   │
+│ 🔖 配方编号：HM-8655                                   │
 │ 🧾 基础套餐：全明星双人分享餐八件套（9900011056）      │
 ╰────────────────────────────────────────────────────────╯
 
@@ -387,7 +387,7 @@ mcd-buddy/
 │       ├── group_meal.py    # 🍱 团餐指挥官
 │       ├── hidden_menu.py   # 🧪 隐藏菜单实验室
 │       └── fortune.py       # 🔮 每日运势签
-├── tests/                   # 🧪 187 个单元 / 集成测试
+├── tests/                   # 🧪 192 个单元 / 集成测试
 ├── promo/                   # 🎬 宣传物料
 │   ├── make_promo.py        # 逐帧渲染 16:9 / 9:16 两条设计稿宣传片
 │   ├── make_readme_gif.py   # 渲染 README 首屏演示 GIF
@@ -419,7 +419,7 @@ mcd-buddy/
 ```bash
 pip install -r requirements-dev.txt
 
-pytest                     # 187 个测试，无需 Token
+pytest                     # 192 个测试，无需 Token
 ruff check src tests promo # 代码风格检查
 ```
 

@@ -30,7 +30,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: 代码风格检查
-        run: ruff check src tests
+        run: ruff check src tests promo
 
       - name: 运行测试
         env:

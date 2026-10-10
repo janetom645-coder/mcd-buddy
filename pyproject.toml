@@ -31,3 +31,7 @@ target-version = "py310"
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B"]
 ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+# promo/ 不是包，显式声明成 first-party，避免 isort 在不同环境下排序漂移
+known-first-party = ["mcd_buddy", "make_promo"]

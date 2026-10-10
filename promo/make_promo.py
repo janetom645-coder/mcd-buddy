@@ -19,9 +19,7 @@
 from __future__ import annotations
 
 import argparse
-import math
 import subprocess
-import sys
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -213,34 +211,37 @@ def background(w: int, h: int, tint=CREAM) -> Image.Image:
 
 PRACTICE = {
     "level": "麦门学徒",
-    "orders": "10 单",
+    "orders": "8 单",
     "days": "8 天",
-    "spend": "¥141.00",
-    "coupons": "13 张",
-    "progress": (5, 10),
+    "spend": "¥138.00",
+    "coupons": "3 张",
+    "progress": (3, 10),
     "next": "麦门弟子",
-    "badges": 12,
+    "badges": 5,
     "levels": 6,
 }
 
 GROUP = [
-    ("阿May", "培根蔬萃双层牛堡", "¥24.50", "想吃牛肉 · 预算 ¥25"),
-    ("老王", "小杯鲜萃咖啡", "¥9.50", "想吃咖啡 · 预算 ¥40"),
-    ("小林", "龙焰芝士棒鸡腿堡三件套", "¥29.90", "预算 ¥30"),
+    ("小王", "巨无霸", "¥24.50", "想吃「牛肉」 · 预算 ¥25"),
+    ("小李", "麦香鸡", "¥15.50", "想吃「鸡肉」 · 预算 ¥20 · 忌口 辣"),
+    ("小张", "麦香鱼", "¥17.50", "想吃「鱼」 · 预算 ¥15"),
+    ("小赵", "高达吉士双牛堡", "¥26.00", "想吃「汉堡」 · 预算 ¥30 · 忌口 油炸"),
+    ("小陈", "大薯条", "¥13.50", "想吃「素食」 · 预算 ¥22"),
+    ("小周", "大杯鲜萃咖啡", "¥12.50", "想吃「咖啡」 · 预算 ¥18"),
 ]
-GROUP_TOTAL = ("¥64.40", "¥21.47")
+GROUP_TOTAL = ("¥109.50", "¥18.25")
 
 HIDDEN = {
     "name": "全明星双人分享餐八件套 · 减脂版",
-    "energy": (2142, 1220),
-    "fat": (90, 53),
-    "protein": 63,
+    "energy": (2150, 1212),
+    "fat": (90, 55),
+    "protein": 61,
 }
 
 FORTUNE = {
     "sign": "中吉",
     "verse": "咖啡入喉，万事不愁",
-    "picks": [("🥇", "冰奶铁中杯", "148 kcal"), ("🥈", "小薯条", "210 kcal")],
+    "picks": [("🥇", "高达吉士双牛堡", "448 kcal"), ("🥈", "猪柳蛋麦满分", "387 kcal")],
     "hour": "09:00 - 10:00",
     "lucky": "51",
 }
@@ -262,7 +263,6 @@ REPO = "github.com/janetom645-coder/mcd-buddy"
 def scene_intro(img, t):
     w, h = img.size
     cx = w // 2
-    d = ImageDraw.Draw(img)
 
     a = ease_out(seg(t, 0.0, 0.22))
     size = int(w * 0.20 * (0.6 + 0.4 * a))
@@ -403,7 +403,7 @@ def scene_practice(img, t):
 
 
 def _group_command_card(img, cx, t):
-    """竖版专用：底部一张深色终端卡，展示真实可复制的命令。"""
+    """竖版专用：底部一张深色终端卡，展示真实可复现的命令。"""
     w, h = img.size
     d = ImageDraw.Draw(img)
 
@@ -413,7 +413,7 @@ def _group_command_card(img, cx, t):
     dy = int(28 * (1 - k))
 
     cap_y = int(h * 0.665) + dy
-    draw_mixed_center(img, cx, cap_y, "一条命令，全员点单搞定", int(w * 0.022), INK, head=True)
+    draw_mixed_center(img, cx, cap_y, "一条命令，不用 Token 就能复现", int(w * 0.022), INK, head=True)
 
     m = int(w * 0.075)
     top = int(h * 0.715) + dy
@@ -427,13 +427,13 @@ def _group_command_card(img, cx, t):
 
     lh = int(h * 0.034)
     l1 = top + int(h * 0.050)
-    draw_mixed(img, (m + int(w * 0.032), l1), "$ mcd group-meal --people \\",
+    tx = m + int(w * 0.032)
+    draw_mixed(img, (tx, l1), "$ mcd-buddy group-meal --demo",
                int(w * 0.0175), (255, 199, 44), head=True)
-    draw_mixed(img, (m + int(w * 0.032), l1 + lh),
-               '  "阿May:25:不要辣; 老王:40:要咖啡; 小林:30"',
+    draw_mixed(img, (tx, l1 + lh), "→ 6 人团餐 ¥109.50　·　人均 ¥18.25",
                int(w * 0.0165), (235, 230, 222))
-    draw_mixed(img, (m + int(w * 0.032), l1 + lh * 2),
-               "→ 已按忌口过滤，并按预算挑好", int(w * 0.0155), (158, 226, 172))
+    draw_mixed(img, (tx, l1 + lh * 2), "→ 忌口 > 口味 > 预算，不会推 2 块钱的饼干",
+               int(w * 0.0155), (158, 226, 172))
 
 
 def scene_group(img, t):
@@ -446,17 +446,17 @@ def scene_group(img, t):
     draw_mixed_center(img, cx, int(h * (0.13 if not tall else 0.09)) + int(w * 0.032),
                       "一群人的点单，不用吵", int(w * 0.020), INK_SOFT)
 
-    # 竖版画面更窄更长，文字随宽度缩得比横版小，所以整体上移、卡片收矮，
+    # 竖版画面更窄更长，文字随宽度缩得比横版小，所以整体上移、卡片按行数取高，
     # 再在下方补一张真实命令卡，避免底部留出一大条空白。
     m = int(w * 0.06)
     top = int(h * (0.27 if not tall else 0.185))
-    card_h = int(h * (0.40 if not tall else 0.285))
+    card_h = int(h * (0.47 if not tall else 0.30))
     bot = top + card_h
     card(img, (m, top, w - m, bot))
     x0, y0, x1, y1 = m, top, w - m, bot
     inner = x0 + int(w * 0.025)
 
-    # 表头 + 3 行数据 = 4 个等分槽，行高自适应，不再固定 //5 留空
+    # 表头 + N 行数据 = N+1 个等分槽，行高自适应，不留空
     slot = (y1 - y0) // (len(GROUP) + 1)
 
     def row_base(i: int) -> int:
@@ -466,24 +466,24 @@ def scene_group(img, t):
     heads = ["伙伴", "推荐单品", "单价", "依据"]
     colx = [inner, inner + int(w * 0.11), inner + int(w * 0.40), inner + int(w * 0.50)]
     hy = row_base(0)
-    for label, x in zip(heads, colx):
+    for label, x in zip(heads, colx, strict=False):
         draw_mixed(img, (x, hy), label, int(w * 0.0165), INK_SOFT, head=True)
     d.line((inner, hy + int(h * 0.012), x1 - int(w * 0.025), hy + int(h * 0.012)),
            fill=CREAM_DEEP, width=3)
 
     for i, (who, dish, price, why) in enumerate(GROUP):
-        k = ease_out(seg(t, 0.18 + i * 0.11, 0.26))
+        k = ease_out(seg(t, 0.16 + i * 0.09, 0.26))
         y = row_base(i + 1) + int(18 * (1 - k))
         draw_mixed(img, (colx[0], y), who, int(w * 0.0175), INK, head=True)
         draw_mixed(img, (colx[1], y), dish, int(w * 0.0175), INK)
         draw_mixed(img, (colx[2], y), price, int(w * 0.0175), RED, head=True)
-        draw_mixed(img, (colx[3], y), why, int(w * 0.0145), INK_SOFT)
+        draw_mixed(img, (colx[3], y), why, int(w * (0.0145 if not tall else 0.0130)), INK_SOFT)
 
-    k = ease_out(seg(t, 0.55, 0.25))
+    k = ease_out(seg(t, 0.72, 0.22))
     y = y1 + int(h * (0.075 if not tall else 0.070)) + int(20 * (1 - k))
     draw_mixed_center(img, cx, y, f"应付 {GROUP_TOTAL[0]}　·　人均 {GROUP_TOTAL[1]}",
                       int(w * 0.028), RED_DARK, head=True)
-    k2 = ease_out(seg(t, 0.68, 0.25))
+    k2 = ease_out(seg(t, 0.80, 0.20))
     draw_mixed_center(img, cx, y + int(h * 0.048) + int(20 * (1 - k2)),
                       "忌口 > 口味 > 预算，预算内取最接近预算的那份",
                       int(w * 0.0185), INK_SOFT)
@@ -697,7 +697,8 @@ def render_frames(w: int, h: int, tall: bool, total: float):
         scene(layer, local)
 
         if prev_alpha < 1.0:
-            a = layer.getchannel("A").point(lambda v: int(v * prev_alpha))
+            # 用默认参数把循环变量绑进闭包，避免 B023（延迟求值会取到最后一次的值）
+            a = layer.getchannel("A").point(lambda v, _a=prev_alpha: int(v * _a))
             layer.putalpha(a)
 
         img.alpha_composite(layer)

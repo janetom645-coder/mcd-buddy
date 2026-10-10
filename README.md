@@ -419,8 +419,8 @@ mcd-buddy/
 ```bash
 pip install -r requirements-dev.txt
 
-pytest               # 187 个测试，无需 Token
-ruff check src tests # 代码风格检查
+pytest                     # 187 个测试，无需 Token
+ruff check src tests promo # 代码风格检查
 ```
 
 测试分层：
@@ -496,7 +496,7 @@ ruff check src tests # 代码风格检查
 - **标签匹配带否定判断**：「牛肉」能命中「100%纯牛肉」，但「咖啡」不会命中「无咖啡因」
 
 这几条都写成了测试（`TestGroupMealRecommender` / `TestKeywordMatching`），
-改坏了会立刻变红。线上实测：¥25 预算 → ¥24.50 的双层牛堡，而不是 ¥2 的饼干。
+改坏了会立刻变红。实测：¥25 预算 → ¥24.50 的巨无霸，而不是 ¥2 的饼干。
 
 ---
 

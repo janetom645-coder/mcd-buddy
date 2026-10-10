@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcd-buddy"
+version = "0.1.0"
+description = "麦门助手 MCD Buddy —— 基于麦当劳中国 MCP 的多玩法 AI 助手"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "MCD Buddy" }]
+keywords = ["mcdonalds", "mcp", "mcd", "ai-agent", "skill"]
+dependencies = ["mcp>=1.9.0"]
+
+[project.scripts]
+mcd-buddy = "mcd_buddy.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["E501"]

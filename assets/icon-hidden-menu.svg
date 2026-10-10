@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="i3t">
+  <title id="i3t">隐藏菜单实验室图标：烧瓶里的汉堡</title>
+  <rect x="2" y="2" width="156" height="156" rx="28" fill="#FFF8E7" stroke="#FFC72C" stroke-width="4"/>
+  <rect x="56" y="112" width="48" height="11" rx="5.5" fill="#E8A33D"/>
+  <rect x="54" y="103" width="52" height="9" rx="4.5" fill="#7B4A21"/>
+  <path d="M56 103 A24 17 0 0 1 104 103 Z" fill="#E8A33D"/>
+  <circle cx="70" cy="90" r="3.2" fill="#3A2A1A"/>
+  <circle cx="90" cy="90" r="3.2" fill="#3A2A1A"/>
+  <path d="M74 99 Q80 104 86 99" fill="none" stroke="#3A2A1A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M68 40 h24 v20 l24 44 a11 11 0 0 1 -10 16 h-52 a11 11 0 0 1 -10 -16 l24 -44 z" fill="none" stroke="#DA291C" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="64" y="34" width="32" height="9" rx="4.5" fill="#DA291C"/>
+  <circle cx="44" cy="52" r="5" fill="#FFC72C"/>
+  <circle cx="122" cy="66" r="4" fill="#FFC72C"/>
+</svg>

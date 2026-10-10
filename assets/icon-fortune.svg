@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="i4t">
+  <title id="i4t">每日运势签图标：签筒</title>
+  <rect x="2" y="2" width="156" height="156" rx="28" fill="#FFF8E7" stroke="#FFC72C" stroke-width="4"/>
+  <rect x="62" y="26" width="9" height="66" rx="4.5" fill="#FFC72C" transform="rotate(-10 66 59)"/>
+  <rect x="74" y="18" width="9" height="74" rx="4.5" fill="#FAC775"/>
+  <rect x="86" y="24" width="9" height="68" rx="4.5" fill="#FFC72C" transform="rotate(9 90 58)"/>
+  <rect x="96" y="30" width="9" height="62" rx="4.5" fill="#FAC775" transform="rotate(16 100 61)"/>
+  <path d="M74 18 h9 v10 h-9 z" fill="#DA291C"/>
+  <path d="M44 78 h72 l-9 58 a12 12 0 0 1 -12 10 h-30 a12 12 0 0 1 -12 -10 z" fill="#DA291C"/>
+  <path d="M44 78 h72 l-2 14 h-68 z" fill="#B01F14"/>
+  <circle cx="80" cy="110" r="13" fill="#FFC72C"/>
+  <path d="M80 102 l3 6 7 1 -5 5 1 7 -6 -3 -6 3 1 -7 -5 -5 7 -1 z" fill="#DA291C"/>
+</svg>

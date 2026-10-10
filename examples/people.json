@@ -1,0 +1,11 @@
+{
+  "people": [
+    { "name": "小王", "budget": 25, "want": "牛肉", "avoid": [] },
+    { "name": "小李", "budget": 20, "want": "鸡肉", "avoid": ["辣"] },
+    { "name": "小张", "budget": 15, "want": "鱼", "avoid": [] },
+    { "name": "小赵", "budget": 30, "want": "汉堡", "avoid": ["油炸"] },
+    { "name": "小陈", "budget": 22, "want": "沙拉", "avoid": [] },
+    { "name": "小周", "budget": 18, "want": "咖啡", "avoid": [] },
+    { "name": "小吴", "budget": 20, "want": "鸡肉", "avoid": ["辣", "牛肉"] }
+  ]
+}

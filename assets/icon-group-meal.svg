@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="i2t">
+  <title id="i2t">团餐指挥官图标：三个汉堡伙伴</title>
+  <rect x="2" y="2" width="156" height="156" rx="28" fill="#FFF8E7" stroke="#FFC72C" stroke-width="4"/>
+  <rect x="16" y="104" width="128" height="34" rx="14" fill="#DA291C"/>
+  <circle cx="46" cy="66" r="24" fill="#E8A33D"/>
+  <circle cx="80" cy="56" r="26" fill="#F0B457"/>
+  <circle cx="114" cy="66" r="24" fill="#E8A33D"/>
+  <circle cx="38" cy="62" r="3.4" fill="#3A2A1A"/>
+  <circle cx="54" cy="62" r="3.4" fill="#3A2A1A"/>
+  <path d="M40 74 Q46 80 52 74" fill="none" stroke="#3A2A1A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="71" cy="51" r="3.6" fill="#3A2A1A"/>
+  <circle cx="89" cy="51" r="3.6" fill="#3A2A1A"/>
+  <path d="M73 64 Q80 71 87 64" fill="none" stroke="#3A2A1A" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="106" cy="62" r="3.4" fill="#3A2A1A"/>
+  <circle cx="122" cy="62" r="3.4" fill="#3A2A1A"/>
+  <path d="M108 74 Q114 80 120 74" fill="none" stroke="#3A2A1A" stroke-width="3" stroke-linecap="round"/>
+</svg>

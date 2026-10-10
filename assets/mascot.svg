@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 250" width="240" height="250" role="img" aria-labelledby="mascotTitle mascotDesc">
+  <title id="mascotTitle">麦麦 —— 麦门助手吉祥物</title>
+  <desc id="mascotDesc">一只圆润可爱的汉堡小人，戴着金拱门小帽，笑眯眯地挥手。</desc>
+
+  <ellipse cx="120" cy="234" rx="76" ry="11" fill="#000000" opacity="0.08"/>
+
+  <rect x="42" y="170" width="156" height="48" rx="22" fill="#E8A33D"/>
+  <rect x="40" y="154" width="160" height="24" rx="12" fill="#7B4A21"/>
+  <path d="M40 152 h160 v6 a10 10 0 0 1 -10 10 h-14 l-8 12 -10 -12 h-24 l-8 12 -10 -12 h-24 l-8 12 -10 -12 h-14 a10 10 0 0 1 -10 -10 z" fill="#FFC72C"/>
+  <path d="M34 138 q11 13 22 0 q11 13 22 0 q11 13 22 0 q11 13 22 0 q11 13 22 0 q11 13 22 0 q11 13 22 0 q11 13 22 0 v10 h-176 z" fill="#6FBF4A"/>
+
+  <path d="M40 140 A80 70 0 0 1 200 140 Z" fill="#E8A33D"/>
+  <ellipse cx="86" cy="98" rx="9" ry="5" fill="#FFF3D6" transform="rotate(-18 86 98)"/>
+  <ellipse cx="126" cy="88" rx="9" ry="5" fill="#FFF3D6" transform="rotate(6 126 88)"/>
+  <ellipse cx="164" cy="104" rx="9" ry="5" fill="#FFF3D6" transform="rotate(20 164 104)"/>
+  <ellipse cx="106" cy="118" rx="8" ry="4.5" fill="#FFF3D6" transform="rotate(-8 106 118)"/>
+  <ellipse cx="150" cy="120" rx="8" ry="4.5" fill="#FFF3D6" transform="rotate(14 150 120)"/>
+
+  <circle cx="98" cy="100" r="9" fill="#3A2A1A"/>
+  <circle cx="142" cy="100" r="9" fill="#3A2A1A"/>
+  <circle cx="101" cy="96" r="3.2" fill="#FFFFFF"/>
+  <circle cx="145" cy="96" r="3.2" fill="#FFFFFF"/>
+  <path d="M104 118 Q120 134 136 118" fill="none" stroke="#3A2A1A" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="74" cy="118" rx="12" ry="8" fill="#FF8A73" opacity="0.45"/>
+  <ellipse cx="166" cy="118" rx="12" ry="8" fill="#FF8A73" opacity="0.45"/>
+
+  <path d="M56 62 C56 34 78 34 78 62 M78 62 C78 34 100 34 100 62" fill="none" stroke="#FFC72C" stroke-width="13" stroke-linecap="round"/>
+  <path d="M28 150 C16 138 20 122 32 120" fill="none" stroke="#E8A33D" stroke-width="13" stroke-linecap="round"/>
+  <path d="M212 150 C224 138 220 122 208 120" fill="none" stroke="#E8A33D" stroke-width="13" stroke-linecap="round"/>
+</svg>

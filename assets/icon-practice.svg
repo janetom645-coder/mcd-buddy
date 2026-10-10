@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160" role="img" aria-labelledby="i1t">
+  <title id="i1t">修行录图标：奖牌</title>
+  <rect x="2" y="2" width="156" height="156" rx="28" fill="#FFF8E7" stroke="#FFC72C" stroke-width="4"/>
+  <path d="M62 92 L50 138 L68 127 L80 142 L88 96 Z" fill="#DA291C"/>
+  <path d="M98 92 L110 138 L92 127 L80 142 L72 96 Z" fill="#B01F14"/>
+  <circle cx="80" cy="66" r="42" fill="#FFC72C"/>
+  <circle cx="80" cy="66" r="31" fill="#FFF8E7"/>
+  <path d="M80 44 l7 15 16 2 -12 11 3 16 -14 -8 -14 8 3 -16 -12 -11 16 -2 z" fill="#DA291C"/>
+</svg>

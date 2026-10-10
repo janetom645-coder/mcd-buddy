@@ -212,7 +212,7 @@ def _render(
     unlocked_count = sum(1 for v in flags.values() if v)
 
     lines: list[str] = []
-    lines.append(theme.banner("麦门修行录", "MCD Buddy · 点餐即修行"))
+    lines.append(theme.banner("麦门修行录", "McQuartet · 点餐即修行"))
     lines.append("")
 
     head = "\n".join(

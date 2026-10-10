@@ -1,4 +1,4 @@
-"""麦门助手 MCD Buddy 命令行入口。
+"""麦门四重奏 McQuartet 命令行入口。
 
 用法示例::
 
@@ -89,7 +89,7 @@ def _add_store(parser: argparse.ArgumentParser) -> None:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="mcd-buddy",
-        description="🍟 麦门助手 MCD Buddy —— 基于麦当劳中国 MCP 的多玩法助手",
+        description="🍟 麦门四重奏 McQuartet —— 基于麦当劳中国 MCP 的多玩法助手",
     )
     parser.add_argument("--token", help="麦当劳 MCP Token（也可用环境变量 MCD_MCP_TOKEN）")
     parser.add_argument("--demo", action="store_true", help="离线演示模式，无需 Token")

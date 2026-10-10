@@ -1,4 +1,4 @@
-"""🎨 麦门助手卡通主题 —— 麦当劳配色 + ASCII 卡片 + 薯条进度条。
+"""🎨 麦门四重奏卡通主题 —— 麦当劳配色 + ASCII 卡片 + 薯条进度条。
 
 设计基调：圆润、可爱、有亲和力，尽量用金拱门、汉堡、薯条、可乐等元素，
 让命令行输出也带着「麦门」的快乐感。
@@ -75,7 +75,7 @@ COFFEE = "☕"
 BURGER_KEY = "🍔"
 
 
-def banner(title: str = "麦门助手 MCD BUDDY", subtitle: str = "") -> str:
+def banner(title: str = "麦门四重奏 McQuartet", subtitle: str = "") -> str:
     """金拱门抬头的卡通 banner。"""
     lines = [red(ARCHES)]
     lines.append("")

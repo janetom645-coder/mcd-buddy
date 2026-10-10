@@ -329,7 +329,7 @@ def _render(
     per_head = payable / count
 
     lines: list[str] = []
-    lines.append(theme.banner("团餐指挥官", "MCD Buddy · 一群人的点单，不用吵"))
+    lines.append(theme.banner("团餐指挥官", "McQuartet · 一群人的点单，不用吵"))
     lines.append("")
 
     summary = "\n".join(
@@ -474,7 +474,7 @@ def _budget_block(lines: list[str], count: int) -> None:
 
 
 def _empty_menu(store: Store) -> str:
-    lines = [theme.banner("团餐指挥官", "MCD Buddy"), ""]
+    lines = [theme.banner("团餐指挥官", "McQuartet"), ""]
     lines.append(
         theme.card(
             "🍱 该门店当前不可点餐",

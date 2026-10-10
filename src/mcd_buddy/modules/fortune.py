@@ -87,7 +87,7 @@ def _render(
     lucky_kcal = rng.randrange(400, 1001, 50)
 
     lines: list[str] = []
-    lines.append(theme.banner("每日运势签", "MCD Buddy · 今天宜吃巨无霸"))
+    lines.append(theme.banner("每日运势签", "McQuartet · 今天宜吃巨无霸"))
     lines.append("")
 
     sign_body = "\n".join(

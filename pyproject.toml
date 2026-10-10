@@ -5,11 +5,11 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mcd-buddy"
 version = "0.1.0"
-description = "麦门助手 MCD Buddy —— 基于麦当劳中国 MCP 的多玩法 AI 助手"
+description = "麦门四重奏 McQuartet —— 基于麦当劳中国 MCP 的多玩法 AI 助手"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "MCD Buddy" }]
+authors = [{ name = "McQuartet" }]
 keywords = ["mcdonalds", "mcp", "mcd", "ai-agent", "skill"]
 dependencies = ["mcp>=1.9.0"]
 

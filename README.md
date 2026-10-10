@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.svg" alt="麦门助手 MCD Buddy" width="860">
+  <img src="assets/banner.svg" alt="麦门四重奏 McQuartet" width="860">
 </div>
 
 <p align="center">
@@ -22,8 +22,23 @@
   <img src="assets/mascot.svg" alt="吉祥物麦麦" width="180">
 </div>
 
-**麦麦**是麦门助手的吉祥物——一只圆滚滚的汉堡小人，头顶金拱门小帽，笑眯眯的。
+**麦麦**是麦门四重奏的吉祥物——一只圆滚滚的汉堡小人，头顶金拱门小帽，笑眯眯的。
 它每天的工作，就是帮你把「吃麦当劳」这件小事，变得更有趣、更明白、更划算。
+
+---
+
+## 🎬 先看片，再上手
+
+| 横屏 16:9 · 86 秒 | 竖屏 9:16 · 68 秒 |
+| --- | --- |
+| [▶ `promo/mcquartet-16x9.mp4`](promo/mcquartet-16x9.mp4) | [▶ `promo/mcquartet-9x16.mp4`](promo/mcquartet-9x16.mp4) |
+| B 站 / YouTube / 掘金 | 抖音 / 视频号 / 小红书 |
+
+- **片里没有一个是编的数字。** 修行录的 10 单 / ¥141.00 / 13 张卡包券、团餐的 ¥64.40（人均 ¥21.47）、
+  隐藏菜单的 2142 → 1220 kcal，全部来自麦当劳中国 MCP 的真实返回。
+- 视频不是录屏，是 [`promo/make_promo.py`](promo/make_promo.py) 用 Pillow 逐帧绘制 + ffmpeg 编码生成的，
+  改一句文案、换一个数字就能重新出片。
+- 各平台配套文案（含发布节奏与「求 Star」话术）在 [`promo/推广文案.md`](promo/推广文案.md)。
 
 ---
 
@@ -58,7 +73,7 @@
 
 ```text
   🍟 麦门修行录 🍔
-  MCD Buddy · 点餐即修行
+  McQuartet · 点餐即修行
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ╭─ 🧘 我的修行进度 ──────────────────────────────────────╮
@@ -315,6 +330,11 @@ mcd-buddy/
 │       ├── hidden_menu.py   # 🧪 隐藏菜单实验室
 │       └── fortune.py       # 🔮 每日运势签
 ├── tests/                   # 🧪 187 个单元 / 集成测试
+├── promo/                   # 🎬 宣传片与推广文案
+│   ├── make_promo.py        # 逐帧渲染 16:9 / 9:16 两条宣传片
+│   ├── mcquartet-16x9.mp4   # 横屏版（B 站 / YouTube）
+│   ├── mcquartet-9x16.mp4   # 竖屏版（抖音 / 视频号 / 小红书）
+│   └── 推广文案.md           # 各平台文案与发布节奏
 ├── .github/workflows/ci.yml # ⚙️ GitHub Actions（多版本 pytest + ruff）
 ├── examples/                # 使用示例与样例输出
 ├── MCP_INTEGRATION.md       # MCP 集成说明（Server / Tool / 调用流程 / 业务价值）
@@ -456,4 +476,4 @@ Server 共暴露 **35 个** Tool，本项目使用其中 **13 个**。完整说�
 
 ## 📄 License
 
-[MIT](LICENSE) © 2026 MCD Buddy
+[MIT](LICENSE) © 2026 McQuartet

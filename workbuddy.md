@@ -1,6 +1,6 @@
 # WorkBuddy 开发对话上下文（workbuddy.md）
 
-本文件记录 **麦门助手 MCD Buddy** 使用腾讯 WorkBuddy 智能体开发的对话上下文，
+本文件记录 **麦门四重奏 McQuartet** 使用腾讯 WorkBuddy 智能体开发的对话上下文，
 用于核验是否符合麦当劳程序员创意开发大赛「WorkBuddy 专项奖励」的联动条件。
 
 ## 一、开发方式
@@ -31,7 +31,7 @@ WorkBuddy 承担了以下工作：
 ### 阶段 3 · 工程实现
 > 用户：我都要
 >
-> WorkBuddy：确定项目名「麦门助手 MCD Buddy」，搭建 Python 项目结构，
+> WorkBuddy：确定项目名「麦门四重奏 McQuartet」，搭建 Python 项目结构，
 > 基于官方 `mcp` SDK 实现 Streamable HTTP 客户端，落地四大模块。
 
 ### 阶段 4 · 调试与验证

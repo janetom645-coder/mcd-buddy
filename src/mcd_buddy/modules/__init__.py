@@ -1,4 +1,4 @@
-"""麦门助手四大功能模块。"""
+"""麦门四重奏四大功能模块。"""
 
 from .fortune import FortuneModule
 from .group_meal import GroupMealModule

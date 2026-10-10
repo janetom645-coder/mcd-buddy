@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-labelledby="bannerTitle bannerDesc">
-  <title id="bannerTitle">麦门助手 MCD Buddy</title>
-  <desc id="bannerDesc">金拱门与汉堡薯条环绕的卡通标题图，写着「麦门助手 MCD Buddy」。</desc>
+  <title id="bannerTitle">麦门四重奏 McQuartet</title>
+  <desc id="bannerDesc">金拱门与汉堡薯条环绕的卡通标题图，写着「麦门四重奏 McQuartet」。</desc>
 
   <rect x="0" y="0" width="1200" height="300" rx="28" fill="#FFF8E7"/>
   <rect x="10" y="10" width="1180" height="280" rx="22" fill="none" stroke="#FFC72C" stroke-width="4"/>
@@ -32,8 +32,8 @@
     <path d="M212 150 C224 138 220 122 208 120" fill="none" stroke="#E8A33D" stroke-width="13" stroke-linecap="round"/>
   </g>
 
-  <text x="320" y="112" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="66" font-weight="800" fill="#DA291C">麦门助手</text>
-  <text x="326" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="23" font-weight="700" letter-spacing="9" fill="#C9922A">MCD BUDDY</text>
+  <text x="320" y="112" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="66" font-weight="800" fill="#DA291C">麦门四重奏</text>
+  <text x="326" y="152" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="23" font-weight="700" letter-spacing="6" fill="#C9922A">MCQUARTET</text>
   <rect x="326" y="172" width="400" height="3" rx="1.5" fill="#FFC72C"/>
   <text x="326" y="206" font-family="system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif" font-size="19" fill="#8A7A64">基于麦当劳中国官方 MCP · 修行录 / 团餐指挥官 / 隐藏菜单 / 运势签</text>
 

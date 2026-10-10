@@ -395,7 +395,7 @@ def _render(
     n_after = _sum_nutrition(after_entries, nutrition)
 
     lines: list[str] = []
-    lines.append(theme.banner("隐藏菜单实验室", "MCD Buddy · 人人都能发明自己的麦当劳"))
+    lines.append(theme.banner("隐藏菜单实验室", "McQuartet · 人人都能发明自己的麦当劳"))
     lines.append("")
 
     head = "\n".join(
@@ -506,7 +506,7 @@ def _render(
         f"脂肪 {n_after['fat']:.0f}g"
     )
     lines.append(f"💰 {money(new_price)}")
-    lines.append("—— 来自麦门助手 · 隐藏菜单实验室")
+    lines.append("—— 来自麦门四重奏 · 隐藏菜单实验室")
     lines.append("```")
     lines.append("")
     lines.append(theme.rule(38))
@@ -517,7 +517,7 @@ def _render(
 
 
 def _not_found(query: str, menu: list[MenuItem]) -> str:
-    lines = [theme.banner("隐藏菜单实验室", "MCD Buddy"), ""]
+    lines = [theme.banner("隐藏菜单实验室", "McQuartet"), ""]
     lines.append(theme.card("🧪 没找到这个餐品", f"查询：{query}", 58))
     lines.append("")
     lines.append(theme.section("📋 当前门店菜单（部分）"))
@@ -530,7 +530,7 @@ def _not_found(query: str, menu: list[MenuItem]) -> str:
 
 
 def _no_rounds(target: MenuItem) -> str:
-    lines = [theme.banner("隐藏菜单实验室", "MCD Buddy"), ""]
+    lines = [theme.banner("隐藏菜单实验室", "McQuartet"), ""]
     lines.append(
         theme.card(
             "🧪 这是单品，没有可替换轮次",
